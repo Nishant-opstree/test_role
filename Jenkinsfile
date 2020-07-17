@@ -1,4 +1,4 @@
-@Library('test-demo') _
+@Library('test-demo@master') _
 node 
 {
    cleanWs()
