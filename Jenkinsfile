@@ -20,10 +20,12 @@ node
    }
    stage('Clone src code')
    {
+      def gitUrl = "https://github.com/Nishant-opstree/ot-microservices.git" 
       clone_src_code ( """${gitUrl}""", """${application_name}""" , props['DEVELOPEREMAIL'], props['SLACKCHANNELDEVELOPER'] )
    }
    stage('Clone role')
    {
+      def gitUrl = "https://github.com/Nishant-opstree/roles.git"
       manage_role.clone ("""${gitUrl}""", """${application_role_name}""", """${application_name}""", props['DEVELOPEREMAIL'], props['SLACKCHANNELDEVELOPER'])
    }
    stage('Update role')
