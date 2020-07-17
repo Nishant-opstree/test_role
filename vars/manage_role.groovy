@@ -4,9 +4,7 @@ def clone(String gitUrl, String role_name, String application_name, String DEVEL
     try
     {
         echo "Cloning role"
-        echo "1"
-        git branch: """${application_name}""", credentialsId: 'nishant_github_account', url: """${role_repo}"""
-        echo "2"
+        git branch: """${application_name}""", credentialsId: 'nishant_github_account', url: """${gitUrl}"""
         sh """
         mkdir -p ${role_name}/files/${application_name}
         mv -f ${application_name}_src/* ${role_name}/files/${application_name}/"""
