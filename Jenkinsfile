@@ -1,3 +1,4 @@
+@Library('test-demo') _
 node 
 {
    cleanWs()
