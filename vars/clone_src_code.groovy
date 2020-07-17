@@ -6,7 +6,7 @@ def call(String gitUrl, String application_name, String DEVELOPEREMAIL, String S
         echo "Cloning Code From Remote Repo"
         git credentialsId: 'nishant_github_account', url: """${gitUrl}"""
         sh """ mkdir ${application_name}_src
-         mv -f ${application_name}/* ${application_name}_src/"""
+        mv -f ${application_name}/* ${application_name}_src/"""
     }
     catch (err)
     {

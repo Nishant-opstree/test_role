@@ -6,7 +6,7 @@ def clone(String gitUrl, String role_name, String application_name, String DEVEL
         echo "Cloning role"
         git branch: """${application_name}""", credentialsId: 'nishant_github_account', url: """${role_repo}"""
         sh """
-        mkdir -p ${role_name}/files/${}
+        mkdir -p ${role_name}/files/${application_name}
         mv -f ${application_name}_src/* ${role_name}/files/${application_name}/"""
         
     }
